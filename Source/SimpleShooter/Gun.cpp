@@ -3,6 +3,8 @@
 
 #include "Gun.h"
 #include "Components/SkeletalMeshComponent.h"
+#include "Kismet/GameplayStatics.h"
+#include "particles/ParticleSystem.h"
 
 // Sets default values
 AGun::AGun()
@@ -16,6 +18,17 @@ AGun::AGun()
 
 	Mesh = CreateDefaultSubobject<USkeletalMeshComponent>(TEXT("Mesh"));
 	Mesh->SetupAttachment(Root);
+
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> Fire(TEXT("/Game/AssetPacks/ParagonWraith/FX/Particles/Abilities/Primary/FX/P_Wraith_Primary_MuzzleFlash.P_Wraith_Primary_MuzzleFlash"));
+	if(Fire.Succeeded()){
+		MuzzleFlash = Fire.Object;
+	}
+
+}
+
+void AGun::PullTrigger()
+{
+	GameStatic->SpawnEmitterAttached(MuzzleFlash, Mesh, FName("MuzzleFlashSocket"));
 }
 
 // Called when the game starts or when spawned
