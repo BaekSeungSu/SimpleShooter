@@ -25,6 +25,11 @@ AGun::AGun()
 		MuzzleFlash = Fire.Object;
 	}
 
+	static ConstructorHelpers::FObjectFinder<UParticleSystem> Hit(TEXT("/Game/AssetPacks/ShooterGame/Effects/ParticleSystems/Weapons/AssaultRifle/Impacts/P_AssaultRifle_IH.P_AssaultRifle_IH"));
+	if(Hit.Succeeded()){
+		ImpactEffect = Hit.Object;
+	}
+
 }
 
 void AGun::PullTrigger()
@@ -45,7 +50,8 @@ void AGun::PullTrigger()
 	FHitResult HitResult;
 
 	if(GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1)){
-		DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, true);
+		FVector ShootDirection = -Rotation.Vector();
+		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, HitResult.Location, ShootDirection.Rotation());
 	}
 	
 }
