@@ -6,6 +6,7 @@
 #include "Kismet/GameplayStatics.h"
 #include "particles/ParticleSystem.h"
 #include "DrawDebugHelpers.h"
+#include "Engine/DamageEvents.h"
 
 // Sets default values
 AGun::AGun()
@@ -52,6 +53,12 @@ void AGun::PullTrigger()
 	if(GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1)){
 		FVector ShootDirection = -Rotation.Vector();
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, HitResult.Location, ShootDirection.Rotation());
+		AActor* HitActor = HitResult.GetActor();
+		if(HitActor!=nullptr){
+			FPointDamageEvent DamageEvent(Damage, HitResult, ShootDirection, nullptr);
+			HitActor->TakeDamage(Damage, DamageEvent, OwnerController, this);
+		}
+
 	}
 	
 }
