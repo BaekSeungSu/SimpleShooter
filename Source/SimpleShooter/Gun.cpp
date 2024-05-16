@@ -35,11 +35,18 @@ void AGun::PullTrigger()
 	if(OwnerPawn == nullptr) return;
 	AController* OwnerController = OwnerPawn->GetController();
 	if(OwnerController == nullptr) return;
+	
 	FVector Location;
 	FRotator Rotation;
 	OwnerController->GetPlayerViewPoint(Location, Rotation);
-	DrawDebugCamera(GetWorld(), Location, Rotation, 90.f, 2, FColor::Red, true);
+	
+	FVector End = Location + Rotation.Vector() * MaxRange;
+	
+	FHitResult HitResult;
 
+	if(GetWorld()->LineTraceSingleByChannel(HitResult, Location, End, ECollisionChannel::ECC_GameTraceChannel1)){
+		DrawDebugPoint(GetWorld(), HitResult.Location, 20, FColor::Red, true);
+	}
 	
 }
 

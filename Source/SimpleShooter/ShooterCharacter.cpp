@@ -2,6 +2,7 @@
 
 #include "ShooterCharacter.h"
 #include "Gun.h"
+#include "Math/UnrealMathUtility.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -19,6 +20,7 @@ void AShooterCharacter::BeginPlay()
 	GetMesh()->HideBoneByName(TEXT("Weapon_r"), EPhysBodyOp::PBO_None);
 	Gun->AttachToComponent(GetMesh(), FAttachmentTransformRules::KeepRelativeTransform, TEXT("WeaponSocket"));
 	Gun->SetOwner(this);
+
 }
 
 // Called every frame
