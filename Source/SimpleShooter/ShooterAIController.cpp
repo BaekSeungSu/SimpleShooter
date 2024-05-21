@@ -13,6 +13,7 @@ void AShooterAIController::BeginPlay()
     if(AIBehavior != nullptr){
         RunBehaviorTree(AIBehavior);
 
+        GetBlackboardComponent()->SetValueAsVector(TEXT("StartLocation"), GetPawn()->GetActorLocation());
         GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLoctaion"), PlayerPawn->GetActorLocation());
     }
 
@@ -22,14 +23,17 @@ void AShooterAIController::Tick(float DeltaTime)
 {
     Super::Tick(DeltaTime);
 
-    /*
+    APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+
     if(LineOfSightTo(PlayerPawn)){
-        MoveToActor(PlayerPawn, AcceptanceRadius);
-        SetFocus(PlayerPawn);
+        // Setting PlayerLocation
+        GetBlackboardComponent()->SetValueAsVector(TEXT("PlayerLoctaion"), PlayerPawn->GetActorLocation());
+        // Setting lastKnown
+        GetBlackboardComponent()->SetValueAsVector(TEXT("LastKnownPlayerLocation"), PlayerPawn->GetActorLocation());
     }
     else{
-        ClearFocus(EAIFocusPriority::Gameplay);
-        StopMovement();
+        // clear PlayerLocation
+        GetBlackboardComponent()->ClearValue(TEXT("PlayerLoctaion"));
     }
-    */
+    
 }
