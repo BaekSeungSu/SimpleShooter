@@ -80,6 +80,22 @@
 		"directory": "D:\\UE_5.3\\Engine\\Source"
 	},
 	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\KillEmAllGameMode.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\KillEmAllGameMode.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
 		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\MyPawn.cpp",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
@@ -128,6 +144,22 @@
 		"directory": "D:\\UE_5.3\\Engine\\Source"
 	},
 	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\ShooterPlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\ShooterPlayerController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
 		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooter.Build.cs",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
@@ -145,6 +177,22 @@
 	},
 	{
 		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooterGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
+		],
+		"directory": "D:\\UE_5.3\\Engine\\Source"
+	},
+	{
+		"file": "D:\\UnrealEngine5\\SimpleShooter\\Source\\SimpleShooter\\SimpleShooterGameModeBase.h",
 		"arguments": [
 			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.38.33130\\bin\\Hostx64\\x64\\cl.exe",
 			"@D:\\UnrealEngine5\\SimpleShooter\\.vscode\\compileCommands_SimpleShooter\\SimpleShooter.1.rsp"
