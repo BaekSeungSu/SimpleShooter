@@ -33,13 +33,16 @@ private:
 	class USkeletalMeshComponent *Mesh;
 
 	UPROPERTY()
-	class UGameplayStatics *GameStatic;
-
-	UPROPERTY()
 	class UParticleSystem *MuzzleFlash;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* MuzzleSound;
 
 	UPROPERTY()
 	class UParticleSystem *ImpactEffect;
+
+	UPROPERTY(EditAnywhere)
+	USoundBase* ImpactSound;
 
 	UPROPERTY(EditAnywhere)
 	float MaxRange = 1000;

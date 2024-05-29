@@ -34,7 +34,8 @@ AGun::AGun()
 
 void AGun::PullTrigger()
 {
-	GameStatic->SpawnEmitterAttached(MuzzleFlash, Mesh, FName("MuzzleFlashSocket"));
+	UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
+	UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
 
 	FHitResult HitResult;
 	FVector ShotDirection;
@@ -42,6 +43,8 @@ void AGun::PullTrigger()
 	if (bSuccess)
 	{
 		UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), ImpactEffect, HitResult.Location, ShotDirection.Rotation());
+		UGameplayStatics::SpawnSoundAtLocation(GetWorld(), ImpactSound, HitResult.Location);
+		
 		AActor *HitActor = HitResult.GetActor();
 		if (HitActor != nullptr)
 		{
@@ -88,6 +91,6 @@ AController *AGun::GetOwnerController() const
 {
 	APawn *OwnerPawn = Cast<APawn>(GetOwner());
 	if (OwnerPawn == nullptr)
-		return;
+		return nullptr;
 	return OwnerPawn->GetController();
 }
