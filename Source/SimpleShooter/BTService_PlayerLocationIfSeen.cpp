@@ -1,6 +1,5 @@
 // Fill out your copyright notice in the Description page of Project Settings.
 
-
 #include "BTService_PlayerLocationIfSeen.h"
 #include "BehaviorTree/BlackboardComponent.h"
 #include "Kismet/GameplayStatics.h"
@@ -13,29 +12,30 @@ UBTService_PlayerLocationIfSeen::UBTService_PlayerLocationIfSeen()
     NodeName = TEXT("Update Player Location If Seen");
 }
 
-void UBTService_PlayerLocationIfSeen::TickNode(UBehaviorTreeComponent& OwnerComp, uint8* NodeMemory, float DeltaSeconds)
+void UBTService_PlayerLocationIfSeen::TickNode(UBehaviorTreeComponent &OwnerComp, uint8 *NodeMemory, float DeltaSeconds)
 {
     Super::TickNode(OwnerComp, NodeMemory, DeltaSeconds);
 
-    APawn* PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
+    APawn *PlayerPawn = UGameplayStatics::GetPlayerPawn(GetWorld(), 0);
 
-    if(OwnerComp.GetAIOwner() == nullptr || PlayerPawn == nullptr){
+    if (OwnerComp.GetAIOwner() == nullptr || PlayerPawn == nullptr)
+    {
         return;
     }
 
-    AAIController* Controller = OwnerComp.GetAIOwner();
+    AAIController *Controller = OwnerComp.GetAIOwner();
 
-    if(Controller == nullptr){
+    if (Controller == nullptr)
+    {
         return;
     }
 
-    if(Controller->LineOfSightTo(PlayerPawn)){
-        OwnerComp.GetBlackboardComponent()->SetValueAsVector(GetSelectedBlackboardKey(), PlayerPawn->GetActorLocation());
+    if (Controller->LineOfSightTo(PlayerPawn))
+    {
+        OwnerComp.GetBlackboardComponent()->SetValueAsObject(GetSelectedBlackboardKey(), PlayerPawn);
     }
-    else{
+    else
+    {
         OwnerComp.GetBlackboardComponent()->ClearValue(GetSelectedBlackboardKey());
     }
-
 }
-
-

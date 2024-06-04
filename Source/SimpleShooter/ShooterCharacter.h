@@ -24,6 +24,8 @@ public:
 	UFUNCTION(BlueprintPure)
 	bool IsDead() const; // 캐릭터의 어떠한 상태도 바뀌면 안되기 때문에 const
 
+	UFUNCTION(BlueprintPure)
+	float GetHealthPercent() const;
 
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
